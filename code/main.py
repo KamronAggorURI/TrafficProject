@@ -1,4 +1,5 @@
 # Main
+# Check pythonanywhere.com instance for ref
 
 from MapFetcher import RI_MapFetcher
 import requests
@@ -24,5 +25,3 @@ traffic_data = response.json()
 # Print summary of incidents
 for incident in traffic_data.get('incidents', []):
     print(f"{incident['shortDesc']} at ({incident['lat']}, {incident['lng']})")
-
-# Optional: You could plot these coordinates onto the map image using a library like matplotlib or Pillow
