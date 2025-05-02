@@ -3,10 +3,9 @@
 
 ### This project collects live traffic incident data from the MapQuest Traffic API and visualizes it on a Streamlit web app using Folium. It includes an automated EC2-based data collection pipeline that saves `.csv` datasets for later analysis or manual download.
 ---
-```
-```
-## Project Structure
 
+## Project Structure
+```
 /code
   |-> app.py                     # Streamlit app - I integrated Folium to display the traffic maps
   |-> ri_map_fetcher.py          # My helper class for geocoding purposes as well as fetching traffic incident data from https://www.mapquestapi.com/traffic/v2/incidents
@@ -14,7 +13,7 @@
   |-> traffic_data_collection.py # Python script run on AWS EC2 instance, cron scheduler for fetch component
 README.md                        # Description and instructions
 requirements.txt                 # Dependencies for Streamlit app
-
+```
 ---
 
 ## Overview
