@@ -3,4 +3,4 @@ folium
 streamlit-folium
 requests
 pandas
-st-autorefresh
+streamlit-autorefresh
