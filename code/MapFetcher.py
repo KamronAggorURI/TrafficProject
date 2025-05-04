@@ -6,6 +6,7 @@
 
 
 import requests
+import streamlit as st
 
 class RI_MapFetcher:
     def __init__(self, api_key):
