@@ -4,6 +4,7 @@
 import streamlit as st
 import folium
 from streamlit_folium import st_folium
+from streamlit_autorefresh import st_autorefresh
 from MapFetcher import RI_MapFetcher
 
 # Init
