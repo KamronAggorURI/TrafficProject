@@ -13,7 +13,7 @@ class RI_MapFetcher:
         self.api_key = api_key
 
     @st.cache_data(ttl=900) # Kept crashing due to constant reloads, cache result for 15 mins
-    def get_town_coords(self, town_name):
+    def get_town_coords(_self, town_name):
         # Ref -> https://developer.mapquest.com/documentation/api/geocoding/address/get.html
         geocode_url = f'https://www.mapquestapi.com/geocoding/v1/address?key={self.api_key}&location={town_name},RI'
         response = requests.get(geocode_url)
@@ -23,7 +23,7 @@ class RI_MapFetcher:
         return loc['lat'], loc['lng']
 
     @st.cache_data(ttl=900)  # Kept crashing due to constant reloads, cache result for 15 mins
-    def get_traffic_incidents(self, bounding_box='42,-71,41,-72'):
+    def get_traffic_incidents(_self, bounding_box='42,-71,41,-72'):
         traffic_url = f'https://www.mapquestapi.com/traffic/v2/incidents?key={self.api_key}&boundingBox={bounding_box}&filters=construction,incidents'
         response = requests.get(traffic_url)
         response.raise_for_status()
