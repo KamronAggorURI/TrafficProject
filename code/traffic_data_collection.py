@@ -5,17 +5,16 @@ import requests
 import csv
 from datetime import datetime
 import os
+from MapFetcher import RI_MapFetcher
 
 api_key = 'LhMzXgy2kWSqeCJZwc5XYClmjw9vvkIh'
+fetcher = RI_MapFetcher(api_key)
 output_csv = 'traffic_incidents.csv'
 bbox = '42,-71,41,-72'  # ~ RI
 
 def fetch_traffic_incidents():
-    url = f'https://www.mapquestapi.com/traffic/v2/incidents?key={api_key}&boundingBox={bbox}&filters=construction,incidents'
-    response = requests.get(url)
-    response.raise_for_status()
-    data = response.json()
-    return data.get('incidents', [])
+    incidents = fetcher.get_traffic_incidents()
+    return incidents
 
 def append_to_csv(incidents, filename):
     file_exists = os.path.isfile(filename) # check if the file exists
