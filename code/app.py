@@ -35,5 +35,5 @@ incidents = fetcher.get_traffic_incidents()
 for incident in incidents:
     folium.Marker([incident['lat'], incident['lng']], popup=incident['shortDesc'], icon=folium.Icon(color='red' if incident['severity'] > 2 else 'orange')).add_to(m)
 
-# Display map w/ features in Streamlit
+# Display the folium map w/ features in Streamlit
 st_folium(m, width=700, height=500)
