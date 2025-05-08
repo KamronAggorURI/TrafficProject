@@ -24,7 +24,7 @@ requirements.txt                 # Dependencies for Streamlit app
     - Script component then appends this data to `traffic_incidents.csv` on the EC2 instance, completing this flow.
 
 2. **Visualization**
-    - The Streamlit app (`app.py`) will visualize traffic incidents using the collected `.csv` - not entirely necessary but it does look pretty cool.
+    - The Streamlit app (`app.py`) will visualize traffic incidents using the collected `.csv` - not entirely necessary but it does look pretty cool and provides visual feedback.
 
 3. **Manual Download**
     - Although you could create an automatic downloading flow, I have opted to download the .csv manually using the terminal.
@@ -34,10 +34,10 @@ requirements.txt                 # Dependencies for Streamlit app
 ## Requirements
 
 - Python 3.12 (My current version)
-- MapQuest Developer API Key ('`YOUR_API_KEY`' in scripts)
+- MapQuest Developer API Key ('`API_KEY`' in scripts)
 - AWS EC2 instance (Amazon Linux) with:
     - `python3`, `pip3`
-    - Your `.pem` SSH key for secure access
+    - Your .pem SSH key for secure access
     - Please take care if this is your first time using AWS, as it will prompt you for payment information. Although for this implementation it shouldn't incur any costs.
 
 ---
@@ -60,12 +60,12 @@ python3 --version
 pip3 --version
 ```
 
-### Install required Python libraries on EC2
+### Install required Python libs on EC2
 ```bash
 pip3 install requests pandas
 ```
 
-### Set up cron schedule on EC2
+### Set up `cron` schedule on EC2
 ```bash
 crontab -e
 ```
@@ -98,6 +98,7 @@ scp -i ~/path/to/key_one.pem ec2-user@<EC2_PUBLIC_IP>:/home/ec2-user/traffic_inc
 
 - Automate `.csv` uploads for cloud access
 - Expand the Streamlit app
+- Build more features
 
 ---
 
